@@ -1,0 +1,1506 @@
+Put your HTML text here<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit Tak Hingga Fungsi Aljabar - Pembelajaran Interaktif Kelas XII</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        mindset: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- KaTeX for LaTeX Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <!-- Chart.js for Plotting -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-btn.active {
+            border-bottom-color: #0284c7;
+            color: #0284c7;
+            font-weight: 600;
+            background-color: #f0f9ff;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Header & Growth Mindset Banner -->
+    <header class="bg-gradient-to-r from-brand-900 via-brand-800 to-indigo-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2.5 bg-brand-500/30 rounded-xl border border-brand-400/30">
+                        <i class="fa-solid fa-infinity text-2xl text-cyan-300 animate-pulse"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-cyan-300">Matematika Tingkat Lanjut • Kelas XII (Fase F)</span>
+                        <h1 class="text-xl sm:text-2xl font-bold tracking-tight">Limit Tak Hingga Fungsi Aljabar</h1>
+                    </div>
+                </div>
+
+                <!-- Growth Mindset Badge & Score Tracker -->
+                <div class="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-2xl backdrop-blur-md border border-white/10">
+                    <div class="text-right">
+                        <p class="text-xs text-slate-200 font-medium">Poin Usaha & Eksplorasi</p>
+                        <p class="text-lg font-extrabold text-amber-300" id="effort-points">0 XP</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-amber-400/20 border border-amber-300 flex items-center justify-center">
+                        <i class="fa-solid fa-brain text-amber-300 text-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full">
+
+        <!-- Deep Learning & Growth Mindset Affirmation Box -->
+        <div class="bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 border-l-4 border-indigo-500 rounded-r-2xl p-4 mb-6 shadow-sm flex items-start gap-4">
+            <div class="text-indigo-600 text-2xl mt-1">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base">Prinsip Pembelajaran Mendalam & Pola Pikir Bertumbuh (Growth Mindset)</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                    "Kemampuan matematika <span class="font-semibold text-indigo-700">bukan bawaan lahir</span>, melainkan otot yang berkembang lewat latihan dan tantangan! Jika kamu menemui kesulitan, ingatlah: <span class="italic text-indigo-600 font-semibold">"Otakmu sedang membentuk koneksi sinapsis baru."</span> Jangan ragu mencoba dan belajar dari kesalahan!"
+                </p>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 mb-6 overflow-x-auto custom-scrollbar">
+            <div class="flex border-b border-slate-200 min-w-max">
+                <button onclick="switchTab('intuisi')" id="tab-intuisi" class="tab-btn active px-5 py-3.5 text-sm font-medium text-slate-600 hover:text-brand-600 flex items-center gap-2 border-b-2 border-transparent transition-all">
+                    <i class="fa-solid fa-compass"></i>
+                    1. Intuisi & Konsep Basic
+                </button>
+                <button onclick="switchTab('rasional')" id="tab-rasional" class="tab-btn px-5 py-3.5 text-sm font-medium text-slate-600 hover:text-brand-600 flex items-center gap-2 border-b-2 border-transparent transition-all">
+                    <i class="fa-solid fa-calculator"></i>
+                    2. Fungsi Rasional
+                </button>
+                <button onclick="switchTab('irasional')" id="tab-irasional" class="tab-btn px-5 py-3.5 text-sm font-medium text-slate-600 hover:text-brand-600 flex items-center gap-2 border-b-2 border-transparent transition-all">
+                    <i class="fa-solid fa-square-root-variable"></i>
+                    3. Bentuk Akar (Irasional)
+                </button>
+                <button onclick="switchTab('aplikasi')" id="tab-aplikasi" class="tab-btn px-5 py-3.5 text-sm font-medium text-slate-600 hover:text-brand-600 flex items-center gap-2 border-b-2 border-transparent transition-all">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    4. Aplikasi Kontekstual
+                </button>
+                <button onclick="switchTab('latihan')" id="tab-latihan" class="tab-btn px-5 py-3.5 text-sm font-medium text-slate-600 hover:text-brand-600 flex items-center gap-2 border-b-2 border-transparent transition-all">
+                    <i class="fa-solid fa-gamepad"></i>
+                    5. Tantangan & Quiz
+                </button>
+                <button onclick="switchTab('refleksi')" id="tab-refleksi" class="tab-btn px-5 py-3.5 text-sm font-medium text-slate-600 hover:text-brand-600 flex items-center gap-2 border-b-2 border-transparent transition-all">
+                    <i class="fa-solid fa-journal-whills"></i>
+                    6. Jurnal Refleksi
+                </button>
+            </div>
+        </div>
+
+        <!-- TAB 1: INTUISI & KONSEP DASAR -->
+        <section id="content-intuisi" class="tab-content block space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Left Column: Explanation -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-xs font-semibold">
+                        <i class="fa-solid fa-eye"></i> Membangun Pemahaman Konseptual
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900">Apa itu "Limit Tak Hingga"?</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Bayangkan nilai $x$ tumbuh semakin besar tanpa batas ($x \to \infty$). Kita ingin mengamati bagaimana perilaku nilai fungsi $f(x)$.
+                    </p>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-800 text-sm">Fondasi Utama Limit Tak Hingga:</h4>
+                        <div class="math-block text-center text-lg py-2 bg-white rounded-lg border border-slate-200 text-brand-700 font-semibold">
+                            $$\lim_{x \to \infty} \frac{1}{x^n} = 0 \quad (n > 0)$$
+                        </div>
+                        <p class="text-xs text-slate-500">
+                            <strong>Logika Intuisi:</strong> Jika 1 kue dibagi kepada 10 orang, tiap orang dapat 0.1. Jika dibagi ke 1.000.000 orang, tiap orang dapat bagian sangat kecil mendekati 0!
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+                        <h4 class="font-semibold text-emerald-900 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-seedling text-emerald-600"></i> Pola Pikir Bertumbuh
+                        </h4>
+                        <p class="text-xs text-emerald-800 mt-1">
+                            Simbol $\infty$ bukanlah sebuah angka, melainkan sebuah <em>konsep arah/proses tanpa akhir</em>. Jangan memperlakukannya seperti angka biasa!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Numerical Simulator -->
+                <div class="lg:col-span-7 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-chart-line text-brand-600"></i> Eksplorasi Numerik: Simulasi $x \to \infty$
+                            </h3>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-mono">Simulasi Real-Time</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mb-4">
+                            Cobalah memilih nilai $x$ yang semakin raksasa dan amati nilai dari fungsi $f(x) = \frac{1}{x}$:
+                        </p>
+
+                        <!-- Table of values -->
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-slate-600 border border-slate-200 rounded-xl overflow-hidden">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-100">
+                                    <tr>
+                                        <th class="px-4 py-3 border-b">Nilai $x$</th>
+                                        <th class="px-4 py-3 border-b">Bentuk Pecahan $f(x) = \frac{1}{x}$</th>
+                                        <th class="px-4 py-3 border-b">Desimal</th>
+                                        <th class="px-4 py-3 border-b">Kecenderungan</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 bg-white" id="table-intuisi-body">
+                                    <!-- Populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Slider -->
+                    <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <label for="slider-x" class="block text-xs font-semibold text-slate-700 mb-2">
+                            Geser Slider Nilai $x$ ($10$ sampai $1.000.000$):
+                        </label>
+                        <div class="flex items-center gap-4">
+                            <input id="slider-x" type="range" min="1" max="6" value="1" step="1" oninput="updateIntuisiSlider(this.value)" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                            <span id="slider-x-val" class="font-mono text-sm font-bold text-brand-700 w-24 text-right">x = 10</span>
+                        </div>
+                        <div class="mt-3 text-center bg-white p-3 rounded-lg border border-slate-200">
+                            <span class="text-xs text-slate-500">Hasil $f(x) = \frac{1}{x}$:</span>
+                            <div class="font-mono text-lg font-extrabold text-brand-600" id="slider-result">0.100000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: FUNGSI RASIONAL -->
+        <section id="content-rasional" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider">Metode Pangkatan Tertinggi</span>
+                        <h2 class="text-xl font-bold text-slate-900">Eksplorasi Limit Fungsi Rasional</h2>
+                        <p class="text-xs text-slate-500 mt-1">Bentuk Umum: $\lim_{x \to \infty} \frac{a_x x^m + a_{x-1}x^{m-1} + \dots}{b_y x^n + b_{y-1}x^{n-1} + \dots}$</p>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-900 max-w-md">
+                        <i class="fa-solid fa-lightbulb text-amber-600 mr-1"></i>
+                        <strong>Aturan Cepat (Deep Concept):</strong> Cukup bandingkan derajat tertinggi pembilang ($m$) dan penyebut ($n$)!
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- Controls Column -->
+                    <div class="lg:col-span-5 bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
+                        <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-brand-600"></i> Atur Koefisien & Pangkat
+                        </h3>
+
+                        <!-- Pembilang (Numerator) -->
+                        <div class="bg-white p-3.5 rounded-xl border border-slate-200 space-y-3">
+                            <span class="text-xs font-bold text-slate-700 block border-b pb-1">Pembilang $P(x) = a \cdot x^m + c$</span>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="text-xs text-slate-500 block mb-1">Koefisien ($a$):</label>
+                                    <input type="number" id="rasional-a" value="4" onchange="calculateRasional()" class="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm font-mono focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-slate-500 block mb-1">Pangkat ($m$):</label>
+                                    <input type="number" id="rasional-m" value="2" min="1" max="5" onchange="calculateRasional()" class="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm font-mono focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Penyebut (Denominator) -->
+                        <div class="bg-white p-3.5 rounded-xl border border-slate-200 space-y-3">
+                            <span class="text-xs font-bold text-slate-700 block border-b pb-1">Penyebut $Q(x) = b \cdot x^n + d$</span>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="text-xs text-slate-500 block mb-1">Koefisien ($b$):</label>
+                                    <input type="number" id="rasional-b" value="2" onchange="calculateRasional()" class="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm font-mono focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-slate-500 block mb-1">Pangkat ($n$):</label>
+                                    <input type="number" id="rasional-n" value="2" min="1" max="5" onchange="calculateRasional()" class="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm font-mono focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="calculateRasional()" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-semibold transition-all shadow-md shadow-brand-600/20 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-play"></i> Hitung & Uraikan Langkah
+                        </button>
+                    </div>
+
+                    <!-- Step-by-step output column -->
+                    <div class="lg:col-span-7 bg-slate-900 text-slate-100 p-6 rounded-2xl font-mono flex flex-col justify-between shadow-inner">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                                <span class="text-xs text-cyan-400 font-bold tracking-widest uppercase"><i class="fa-solid fa-terminal mr-1"></i> Penjabaran Langkah Aljabar</span>
+                                <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-400" id="rasional-status-badge">m = n</span>
+                            </div>
+
+                            <div class="space-y-4 text-sm" id="rasional-steps">
+                                <!-- Steps rendered via JS -->
+                            </div>
+                        </div>
+
+                        <!-- Mindset Growth note inside code box -->
+                        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+                            <span><i class="fa-solid fa-lightbulb text-amber-400 mr-1"></i> Perhatikan pembagian dengan $x^{\text{pangkat tertinggi}}$.</span>
+                            <span class="text-cyan-400 font-bold" id="rasional-final-result">Limit = 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 Condition Cards for Rational Limits -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="p-4 rounded-xl border border-slate-200 bg-blue-50/50 hover:shadow-md transition-all">
+                        <div class="flex items-center gap-2 font-bold text-blue-900 text-sm mb-1">
+                            <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">1</span>
+                            Kondisi $m = n$
+                        </div>
+                        <p class="text-xs text-slate-600">Pangkat tertinggi pembilang sama dengan penyebut.</p>
+                        <div class="mt-2 text-xs font-bold text-blue-700 bg-white p-2 rounded border border-blue-200">
+                            $$\text{Hasil} = \frac{a}{b} \quad (\text{Rasio Koefisien})$$
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-emerald-50/50 hover:shadow-md transition-all">
+                        <div class="flex items-center gap-2 font-bold text-emerald-900 text-sm mb-1">
+                            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">2</span>
+                            Kondisi $m < n$
+                        </div>
+                        <p class="text-xs text-slate-600">Pangkat penyebut lebih besar daripada pembilang.</p>
+                        <div class="mt-2 text-xs font-bold text-emerald-700 bg-white p-2 rounded border border-emerald-200">
+                            $$\text{Hasil} = 0$$
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-slate-200 bg-purple-50/50 hover:shadow-md transition-all">
+                        <div class="flex items-center gap-2 font-bold text-purple-900 text-sm mb-1">
+                            <span class="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs">3</span>
+                            Kondisi $m > n$
+                        </div>
+                        <p class="text-xs text-slate-600">Pangkat pembilang lebih besar daripada penyebut.</p>
+                        <div class="mt-2 text-xs font-bold text-purple-700 bg-white p-2 rounded border border-purple-200">
+                            $$\text{Hasil} = +\infty \text{ atau } -\infty$$
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: BENTUK AKAR (IRASIONAL) -->
+        <section id="content-irasional" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="text-xs font-semibold text-purple-600 uppercase tracking-wider">Perkalian Sekawan & Rumus Praktis</span>
+                        <h2 class="text-xl font-bold text-slate-900">Limit Tak Hingga Bentuk Irasional $\sqrt{g(x)} - \sqrt{h(x)}$</h2>
+                        <p class="text-xs text-slate-500 mt-1">Bentuk Kuadrat: $\lim_{x \to \infty} \left( \sqrt{ax^2 + bx + c} - \sqrt{px^2 + qx + r} \right)$</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- Inputs -->
+                    <div class="lg:col-span-5 bg-purple-50/50 p-5 rounded-2xl border border-purple-100 space-y-4">
+                        <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-purple-600"></i> Generator Parameter Fungsi
+                        </h3>
+
+                        <!-- Roots input group -->
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded-xl border border-purple-200">
+                                <span class="text-xs font-bold text-purple-900 block mb-2">Akar Pertama: $\sqrt{a x^2 + b x + c}$</span>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div>
+                                        <label class="text-[10px] text-slate-500">Nilai a</label>
+                                        <input type="number" id="ir-a" value="4" onchange="calculateIrasional()" class="w-full px-2 py-1 text-xs border rounded font-mono">
+                                    </div>
+                                    <div>
+                                        <label class="text-[10px] text-slate-500">Nilai b</label>
+                                        <input type="number" id="ir-b" value="8" onchange="calculateIrasional()" class="w-full px-2 py-1 text-xs border rounded font-mono">
+                                    </div>
+                                    <div>
+                                        <label class="text-[10px] text-slate-500">Nilai c</label>
+                                        <input type="number" id="ir-c" value="1" onchange="calculateIrasional()" class="w-full px-2 py-1 text-xs border rounded font-mono">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-3 rounded-xl border border-purple-200">
+                                <span class="text-xs font-bold text-purple-900 block mb-2">Akar Kedua: $\sqrt{p x^2 + q x + r}$</span>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div>
+                                        <label class="text-[10px] text-slate-500">Nilai p</label>
+                                        <input type="number" id="ir-p" value="4" onchange="calculateIrasional()" class="w-full px-2 py-1 text-xs border rounded font-mono">
+                                    </div>
+                                    <div>
+                                        <label class="text-[10px] text-slate-500">Nilai q</label>
+                                        <input type="number" id="ir-q" value="2" onchange="calculateIrasional()" class="w-full px-2 py-1 text-xs border rounded font-mono">
+                                    </div>
+                                    <div>
+                                        <label class="text-[10px] text-slate-500">Nilai r</label>
+                                        <input type="number" id="ir-r" value="5" onchange="calculateIrasional()" class="w-full px-2 py-1 text-xs border rounded font-mono">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="calculateIrasional()" class="w-full py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-sm font-semibold transition-all shadow-md shadow-purple-600/20 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator"></i> Analisis & Tampilkan Rumus Cepat
+                        </button>
+                    </div>
+
+                    <!-- Steps display -->
+                    <div class="lg:col-span-7 bg-white p-6 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-sm border-b pb-2 mb-4 flex items-center justify-between">
+                                <span><i class="fa-solid fa-wand-magic-sparkles text-purple-600 mr-2"></i>Langkah Perkalian Sekawan & Solusi</span>
+                                <span id="ir-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800">a = p</span>
+                            </h3>
+
+                            <div class="space-y-3 text-sm text-slate-700" id="ir-steps">
+                                <!-- Steps rendered dynamically -->
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-purple-900">Rumus Cepat (Trik $a = p$):</span>
+                                <span class="font-mono font-bold text-lg text-purple-700" id="ir-formula-display">L = (b - q) / (2√a)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: APLIKASI KONTEKSTUAL -->
+        <section id="content-aplikasi" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="mb-6">
+                    <span class="text-xs font-semibold text-emerald-600 uppercase tracking-wider">Deep Learning & Problem Solving</span>
+                    <h2 class="text-xl font-bold text-slate-900">Aplikasi Limit Tak Hingga dalam Kehidupan Nyata</h2>
+                    <p class="text-xs text-slate-500 mt-1">Mengapa kita mempelajari limit tak hingga? Di mana konsep ini digunakan oleh ilmuwan & insinyur?</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Application 1: Skydiving Terminal Velocity -->
+                    <div class="bg-gradient-to-br from-slate-50 to-emerald-50/40 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-md transition-all">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg shadow-md shadow-emerald-500/20">
+                                <i class="fa-solid fa-parachute-box"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg">1. Kecepatan Terminal Penerjun Payung</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Saat seseorang jatuh dari pesawat, gesekan udara meningkat seiring bertambahnya kecepatan. Fungsi kecepatan terhadap waktu $t$ dinyatakan dengan:
+                            </p>
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 text-center font-semibold text-sm text-slate-800">
+                                $$v(t) = \frac{80t}{t + 2} \quad \text{(dalam m/s)}$$
+                            </div>
+                            <p class="text-xs text-slate-600">
+                                Berapa kecepatan maksimum yang dicapai penerjun saat jatuh dalam waktu yang sangat lama ($t \to \infty$)?
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between">
+                            <button onclick="toggleAppSolution('sol-1')" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+                                <i class="fa-solid fa-circle-question"></i> Lihat Solusi Matematika
+                            </button>
+                            <span class="text-xs bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-bold">Limit = 80 m/s</span>
+                        </div>
+                        <div id="sol-1" class="hidden mt-3 p-3 bg-white rounded-xl border border-emerald-200 text-xs text-slate-700 space-y-1">
+                            <p><strong>Langkah:</strong> $\lim_{t \to \infty} \frac{80t}{t + 2}$</p>
+                            <p>Bagi pembilang dan penyebut dengan $t$:</p>
+                            <p>$\lim_{t \to \infty} \frac{80}{1 + \frac{2}{t}} = \frac{80}{1 + 0} = 80 \text{ m/s}$ (sekitar 288 km/jam).</p>
+                        </div>
+                    </div>
+
+                    <!-- Application 2: Medical Drug Concentration -->
+                    <div class="bg-gradient-to-br from-slate-50 to-blue-50/40 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-md transition-all">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center text-lg shadow-md shadow-blue-500/20">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg">2. Konsentrasi Obat dalam Darah</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Setelah pasien meminum obat, konsentrasi obat dalam mg/L setelah $t$ jam dirumuskan dengan:
+                            </p>
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 text-center font-semibold text-sm text-slate-800">
+                                $$K(t) = \frac{5t}{2t^2 + 3}$$
+                            </div>
+                            <p class="text-xs text-slate-600">
+                                Apa yang terjadi dengan sisa obat dalam tubuh pasien setelah kurun waktu yang sangat lama ($t \to \infty$)?
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between">
+                            <button onclick="toggleAppSolution('sol-2')" class="text-xs text-blue-700 font-semibold hover:underline flex items-center gap-1">
+                                <i class="fa-solid fa-circle-question"></i> Lihat Solusi Matematika
+                            </button>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full font-bold">Limit = 0 mg/L</span>
+                        </div>
+                        <div id="sol-2" class="hidden mt-3 p-3 bg-white rounded-xl border border-blue-200 text-xs text-slate-700 space-y-1">
+                            <p><strong>Langkah:</strong> Karena pangkat tertinggi penyebut ($t^2$) lebih besar dari pembilang ($t$), maka:</p>
+                            <p>$\lim_{t \to \infty} \frac{\frac{5}{t}}{2 + \frac{3}{t^2}} = \frac{0}{2 + 0} = 0 \text{ mg/L}$.</p>
+                            <p class="italic text-slate-500">Artinya obat akan sepenuhnya diserap/dibuang dari tubuh.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: TANTANGAN & QUIZ INTERAKTIF -->
+        <section id="content-latihan" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">Uji Pemahaman Comprehensive • 20 Soal</span>
+                        <h2 class="text-xl font-bold text-slate-900">Tantangan Limit & Growth Mindset Quiz</h2>
+                        <p class="text-xs text-slate-500 mt-1">Uji pemahaman mendalammu! Setiap jawaban disertai penjelasan lengkap & kalkulasi nilai otomatis.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div id="quiz-score-display" class="px-4 py-2 bg-amber-50 border border-amber-200 text-amber-900 rounded-xl font-bold text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-trophy text-amber-500"></i> Skor: <span id="quiz-score-val" class="text-amber-700">0 / 20</span>
+                        </div>
+                        <button onclick="resetQuiz()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5" title="Mulai Ulang Quiz">
+                            <i class="fa-solid fa-rotate-right"></i> Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-100 rounded-full h-2.5 mb-6 overflow-hidden">
+                    <div id="quiz-progress-bar" class="bg-gradient-to-r from-brand-500 to-indigo-600 h-2.5 rounded-full transition-all duration-300" style="width: 5%"></div>
+                </div>
+
+                <!-- Active Quiz Question Container -->
+                <div id="quiz-active-container" class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
+                    <!-- Question Header & Title -->
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span id="quiz-q-num" class="w-9 h-9 rounded-xl bg-brand-600 text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">1</span>
+                            <div>
+                                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider" id="quiz-q-category">Kategori: Rational Limit</span>
+                                <h3 class="font-bold text-slate-800 text-base" id="quiz-q-title">Berapakah nilai dari limit berikut?</h3>
+                            </div>
+                        </div>
+                        <span class="text-xs font-mono bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-lg font-semibold" id="quiz-progress-text">Soal 1 dari 20</span>
+                    </div>
+
+                    <!-- Question Expression Box -->
+                    <div id="quiz-q-math" class="my-3 text-lg sm:text-xl font-bold text-brand-700 bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                        $$\lim_{x \to \infty} \frac{6x^3 - 2x + 1}{2x^3 + 5x^2}$$
+                    </div>
+
+                    <!-- Options Grid -->
+                    <div id="quiz-options-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+
+                    <!-- Scaffolding Hint Accordion -->
+                    <div class="pt-2">
+                        <button onclick="toggleActiveHint()" class="text-xs text-brand-600 font-semibold hover:underline flex items-center gap-1.5">
+                            <i class="fa-solid fa-lightbulb text-amber-500"></i> Butuh Clue / Petunjuk? (+5 XP)
+                        </button>
+                        <p id="quiz-active-hint" class="hidden mt-2 p-3.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-xl text-xs leading-relaxed">
+                            <!-- Populated dynamically -->
+                        </p>
+                    </div>
+
+                    <!-- Immediate Feedback & Explanation Box -->
+                    <div id="quiz-feedback-box" class="hidden p-4 rounded-xl border text-sm transition-all space-y-2">
+                        <!-- Rendered upon answering -->
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+                        <button id="btn-prev-q" onclick="navigateQuiz(-1)" class="px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-xl text-xs font-semibold hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-arrow-left"></i> Sebelumnya
+                        </button>
+                        <button id="btn-next-q" onclick="navigateQuiz(1)" class="px-5 py-2.5 bg-brand-600 text-white rounded-xl text-xs font-semibold hover:bg-brand-700 transition-all shadow-md shadow-brand-600/20 flex items-center gap-2">
+                            Selanjutnya <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Final Quiz Results & Complete Review Card -->
+                <div id="quiz-summary-container" class="hidden space-y-6">
+                    <div class="bg-gradient-to-br from-brand-900 via-indigo-900 to-slate-900 text-white p-6 sm:p-8 rounded-2xl shadow-lg border border-indigo-700 text-center space-y-4">
+                        <div class="inline-flex p-4 bg-white/10 rounded-full border border-white/20 mb-1">
+                            <i class="fa-solid fa-award text-4xl text-amber-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold">Hasil Akhir Evaluasi Quiz</h3>
+                        <p class="text-xs text-slate-300 max-w-md mx-auto">Selamat telah menyelesaikan seluruh 20 tantangan limit tak hingga! Berikut adalah performa dan tingkat pemahamanmu:</p>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto pt-2">
+                            <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+                                <span class="text-[10px] uppercase text-slate-300 font-semibold block">Skor Akhir</span>
+                                <span id="summary-final-score" class="text-2xl font-extrabold text-amber-300">0 / 100</span>
+                            </div>
+                            <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+                                <span class="text-[10px] uppercase text-slate-300 font-semibold block">Benar</span>
+                                <span id="summary-correct-count" class="text-2xl font-extrabold text-emerald-300">0 / 20</span>
+                            </div>
+                            <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+                                <span class="text-[10px] uppercase text-slate-300 font-semibold block">Total XP</span>
+                                <span id="summary-xp-gained" class="text-2xl font-extrabold text-cyan-300">+0 XP</span>
+                            </div>
+                            <div class="bg-white/10 p-3.5 rounded-xl border border-white/10">
+                                <span class="text-[10px] uppercase text-slate-300 font-semibold block">Predikat</span>
+                                <span id="summary-badge" class="text-xs font-extrabold text-purple-300 block mt-1">Pejuang Limit</span>
+                            </div>
+                        </div>
+
+                        <div id="summary-mindset-msg" class="text-xs bg-white/10 p-4 rounded-xl border border-white/10 text-slate-200 max-w-2xl mx-auto leading-relaxed">
+                            <!-- Growth mindset message -->
+                        </div>
+
+                        <button onclick="resetQuiz()" class="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-900 rounded-xl font-bold text-sm transition-all shadow-lg flex items-center gap-2 mx-auto">
+                            <i class="fa-solid fa-rotate-right"></i> Coba Lagi Tantangan
+                        </button>
+                    </div>
+
+                    <!-- Complete Review Table of All 20 Questions -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-4">
+                        <h4 class="font-bold text-slate-800 text-base flex items-center gap-2 border-b pb-3">
+                            <i class="fa-solid fa-list-check text-brand-600"></i> Kunci Jawaban & Pembahasan Lengkap (20 Soal)
+                        </h4>
+                        <div id="quiz-full-review-list" class="space-y-4 divide-y divide-slate-200">
+                            <!-- Rendered dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 6: JURNAL REFLEKSI METAKOGNITIF -->
+        <section id="content-refleksi" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="mb-6">
+                    <span class="text-xs font-semibold text-purple-600 uppercase tracking-wider">Metakognisi & Growth Mindset</span>
+                    <h2 class="text-xl font-bold text-slate-900">Jurnal Refleksi Pembelajaran</h2>
+                    <p class="text-xs text-slate-500 mt-1">Refleksikan proses belajarmu untuk memperkuat sinapsis pemahaman matematika di otakmu!</p>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="bg-purple-50/50 p-4 rounded-xl border border-purple-100 space-y-2">
+                        <label for="ref-q1" class="block text-sm font-bold text-purple-900">
+                            1. Konsep mana yang paling menantang bagimu hari ini, dan bagaimana caramu mengatasinya?
+                        </label>
+                        <textarea id="ref-q1" rows="3" class="w-full p-3 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-purple-500 focus:outline-none bg-white" placeholder="Tuliskan pemikiranmu di sini..."></textarea>
+                    </div>
+
+                    <div class="bg-indigo-50/50 p-4 rounded-xl border border-indigo-100 space-y-2">
+                        <label for="ref-q2" class="block text-sm font-bold text-indigo-900">
+                            2. Apa kesimpulan utama yang kamu dapatkan tentang perilaku fungsi saat $x \to \infty$?
+                        </label>
+                        <textarea id="ref-q2" rows="3" class="w-full p-3 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none bg-white" placeholder="Tuliskan kesimpulanmu dengan bahasa sendiri..."></textarea>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-2">
+                        <button onclick="saveReflection()" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm rounded-xl transition-all shadow-md shadow-purple-600/20 flex items-center gap-2">
+                            <i class="fa-solid fa-floppy-disk"></i> Simpan Refleksi (+50 XP)
+                        </button>
+                        <span id="ref-saved-status" class="text-xs font-semibold"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-6 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
+            <p class="font-semibold text-slate-300">Media Pembelajaran Interaktif Matematika Tingkat Lanjut - Kurikulum Merdeka (Fase F)</p>
+            <p>Dirancang dengan Pendekatan Pembelajaran Mendalam (Deep Learning) & Pola Pikir Bertumbuh (Growth Mindset)</p>
+        </div>
+    </footer>
+
+    <!-- Application JavaScript Logic -->
+    <script>
+        // Global State Variables
+        let currentTab = 'intuisi';
+        let effortXP = 0;
+
+        // Function to switch navigation tabs
+        function switchTab(tabId) {
+            currentTab = tabId;
+            
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+            });
+
+            // Deactivate all tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show target content tab
+            const targetContent = document.getElementById(`content-${tabId}`);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+                targetContent.classList.add('block');
+            }
+
+            // Activate target button
+            const targetBtn = document.getElementById(`tab-${tabId}`);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+
+            // Re-render KaTeX math formatting inside newly activated tab
+            if (targetContent && typeof renderMathInElement === 'function') {
+                renderMathInElement(targetContent, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+
+            // Award small effort XP for exploring material
+            addXP(5);
+        }
+
+        // 20 Comprehensive Mathematics Questions Data
+        const quizData = [
+            {
+                id: 1,
+                category: "Fungsi Rasional (m = n)",
+                title: "Berapakah nilai limit fungsi rasional berikut?",
+                math: "\\lim_{x \\to \\infty} \\frac{6x^3 - 2x + 1}{2x^3 + 5x^2}",
+                options: [
+                    { label: "A. 0", correct: false },
+                    { label: "B. 3", correct: true },
+                    { label: "C. $\\infty$", correct: false },
+                    { label: "D. 6", correct: false }
+                ],
+                hint: "Pangkat tertinggi pembilang dan penyebut adalah sama ($x^3$). Gunakan rumus praktis rasional $m = n \\implies \\frac{a}{b}$.",
+                explanation: "Karena derajat pembilang ($m=3$) sama dengan penyebut ($n=3$), nilai limit ditentukan oleh rasio koefisien pangkat tertinggi: $\\frac{a}{b} = \\frac{6}{2} = 3$."
+            },
+            {
+                id: 2,
+                category: "Bentuk Irasional (a = p)",
+                title: "Tentukan nilai limit bentuk akar kuadrat berikut:",
+                math: "\\lim_{x \\to \\infty} \\left( \\sqrt{9x^2 + 12x - 1} - \\sqrt{9x^2 - 6x + 4} \\right)",
+                options: [
+                    { label: "A. 1", correct: false },
+                    { label: "B. 3", correct: true },
+                    { label: "C. 6", correct: false },
+                    { label: "D. 0", correct: false }
+                ],
+                hint: "Di sini $a=9, b=12, c=-1$, serta $p=9, q=-6, r=4$. Karena $a=p=9$, gunakan rumus $\\frac{b-q}{2\\sqrt{a}}$.",
+                explanation: "Karena $a=p=9$, kita gunakan rumus cepat $L = \\frac{b-q}{2\\sqrt{a}} = \\frac{12 - (-6)}{2\\sqrt{9}} = \\frac{18}{2 \\times 3} = \\frac{18}{6} = 3$."
+            },
+            {
+                id: 3,
+                category: "Fungsi Rasional (m < n)",
+                title: "Berapakah nilai limit jika derajat penyebut lebih besar?",
+                math: "\\lim_{x \\to \\infty} \\frac{5x^2 + 3}{x^4 - 2x + 7}",
+                options: [
+                    { label: "A. 0", correct: true },
+                    { label: "B. 5", correct: false },
+                    { label: "C. $\\infty$", correct: false },
+                    { label: "D. Tidak Terdefinisi", correct: false }
+                ],
+                hint: "Derajat pembilang $m=2$, penyebut $n=4$. Karena $m < n$, ingat konsep pembagian dengan bilangan super raksasa.",
+                explanation: "Karena derajat penyebut ($x^4$) lebih tinggi daripada pembilang ($x^2$), pembagi tumbuh jauh lebih cepat menuju tak hingga sehingga nilai pecahan mendekati $0$."
+            },
+            {
+                id: 4,
+                category: "Fungsi Rasional (m > n)",
+                title: "Hitunglah nilai limit berikut ketika derajat pembilang lebih besar:",
+                math: "\\lim_{x \\to \\infty} \\frac{4x^5 - 3x^2}{2x^3 + 1}",
+                options: [
+                    { label: "A. 2", correct: false },
+                    { label: "B. 0", correct: false },
+                    { label: "C. $+\\infty$", correct: true },
+                    { label: "D. -2", correct: false }
+                ],
+                hint: "Derajat pembilang $m=5$ lebih besar dari penyebut $n=3$. Pembilang akan bertambah cepat tanpa batas.",
+                explanation: "Karena derajat pembilang ($m=5$) lebih besar dari derajat penyebut ($n=3$) dan koefisien utama bernilai positif ($+4$), maka hasil limit adalah $+\\infty$."
+            },
+            {
+                id: 5,
+                category: "Fungsi Rasional Perkalian",
+                title: "Tentukan hasil dari limit bentuk perkalian aljabar ini:",
+                math: "\\lim_{x \\to \\infty} \\frac{(2x - 1)(3x + 4)}{x^2 - 5}",
+                options: [
+                    { label: "A. 5", correct: false },
+                    { label: "B. 6", correct: true },
+                    { label: "C. 2", correct: false },
+                    { label: "D. 3", correct: false }
+                ],
+                hint: "Jabarkan dulu pembilang: $(2x-1)(3x+4) = 6x^2 + 5x - 4$. Bandingkan dengan $x^2 - 5$.",
+                explanation: "Pembilang dijabarkan menjadi $6x^2 + 5x - 4$. Pangkat tertinggi di atas dan di bawah sama-sama $x^2$. Rasio koefisiennya adalah $\\frac{6}{1} = 6$."
+            },
+            {
+                id: 6,
+                category: "Fungsi Rasional Kuadrat",
+                title: "Berapakah nilai dari limit kuadrat berpangkat berikut?",
+                math: "\\lim_{x \\to \\infty} \\frac{(3x - 2)^2}{9x^2 + 4x - 1}",
+                options: [
+                    { label: "A. 1", correct: true },
+                    { label: "B. 3", correct: false },
+                    { label: "C. 9", correct: false },
+                    { label: "D. $\\frac{1}{3}$", correct: false }
+                ],
+                hint: "Jabarkan $(3x - 2)^2 = 9x^2 - 12x + 4$. Perhatikan koefisien $x^2$.",
+                explanation: "Pembilang dijabarkan menjadi $9x^2 - 12x + 4$. Suku penyebut tertinggi adalah $9x^2$. Hasilnya adalah $\\frac{9}{9} = 1$."
+            },
+            {
+                id: 7,
+                category: "Bentuk Irasional Linier-Akar",
+                title: "Hitung nilai limit gabungan bentuk linier dan akar kuadrat:",
+                math: "\\lim_{x \\to \\infty} \\left( \\sqrt{4x^2 + 8x + 3} - (2x - 1) \\right)",
+                options: [
+                    { label: "A. 1", correct: false },
+                    { label: "B. 2", correct: false },
+                    { label: "C. 3", correct: true },
+                    { label: "D. 4", correct: false }
+                ],
+                hint: "Ubah $(2x - 1)$ menjadi bentuk akar $\\sqrt{(2x - 1)^2} = \\sqrt{4x^2 - 4x + 1}$. Lalu gunakan rumus $\\frac{b-q}{2\\sqrt{a}}$.",
+                explanation: "$(2x-1) = \\sqrt{4x^2 - 4x + 1}$. Di sini $a=4, b=8, q=-4$. Nilai limit $L = \\frac{8 - (-4)}{2\\sqrt{4}} = \\frac{12}{2 \\times 2} = \\frac{12}{4} = 3$."
+            },
+            {
+                id: 8,
+                category: "Bentuk Irasional Murni",
+                title: "Tentukan hasil limit irasional berikut:",
+                math: "\\lim_{x \\to \\infty} \\left( \\sqrt{x^2 + 5x} - \\sqrt{x^2 - 3x} \\right)",
+                options: [
+                    { label: "A. 2", correct: false },
+                    { label: "B. 4", correct: true },
+                    { label: "C. 8", correct: false },
+                    { label: "D. 1", correct: false }
+                ],
+                hint: "Nilai $a=1, b=5, c=0$ dan $p=1, q=-3, r=0$. Gunakan $\\frac{b-q}{2\\sqrt{a}}$.",
+                explanation: "Karena $a=p=1$, maka $L = \\frac{5 - (-3)}{2\\sqrt{1}} = \\frac{8}{2} = 4$."
+            },
+            {
+                id: 9,
+                category: "Fungsi Rasional Negatif",
+                title: "Tentukan limit pecahan dengan koefisien penyebut negatif:",
+                math: "\\lim_{x \\to \\infty} \\frac{x^3 - 2x^2 + 5}{4 - 3x^3}",
+                options: [
+                    { label: "A. $-\\frac{1}{3}$", correct: true },
+                    { label: "B. $\\frac{1}{4}$", correct: false },
+                    { label: "C. $-\\frac{1}{4}$", correct: false },
+                    { label: "D. $\\frac{1}{3}$", correct: false }
+                ],
+                hint: "Perhatikan koefisien $x^3$ di pembilang ($+1$) dan di penyebut ($-3$).",
+                explanation: "Pangkat tertinggi di atas dan bawah adalah $x^3$. Koefisien pembilang adalah $1$ dan penyebut adalah $-3$. Hasilnya $\\frac{1}{-3} = -\\frac{1}{3}$."
+            },
+            {
+                id: 10,
+                category: "Bentuk Irasional Sederhana",
+                title: "Berapakah hasil dari limit irasional berikut?",
+                math: "\\lim_{x \\to \\infty} \\left( \\sqrt{25x^2 + 10x - 7} - 5x \\right)",
+                options: [
+                    { label: "A. 0", correct: false },
+                    { label: "B. 1", correct: true },
+                    { label: "C. 2", correct: false },
+                    { label: "D. 5", correct: false }
+                ],
+                hint: "Ubah $5x$ menjadi $\\sqrt{25x^2}$. Nilai $a=25, b=10, q=0$.",
+                explanation: "Bentuk dapat ditulis sebagai $\\sqrt{25x^2 + 10x - 7} - \\sqrt{25x^2}$. Hasil $L = \\frac{10 - 0}{2\\sqrt{25}} = \\frac{10}{2 \\times 5} = 1$."
+            },
+            {
+                id: 11,
+                category: "Fungsi Pecahan Bentuk Akar",
+                title: "Hitunglah nilai limit pecahan yang mengandung akar:",
+                math: "\\lim_{x \\to \\infty} \\frac{\\sqrt{16x^2 + 5x}}{2x + 1}",
+                options: [
+                    { label: "A. 8", correct: false },
+                    { label: "B. 4", correct: false },
+                    { label: "C. 2", correct: true },
+                    { label: "D. 1", correct: false }
+                ],
+                hint: "Di dalam akar, $\\sqrt{16x^2} = 4x$ untuk $x \\to \\infty$. Pembagi penyebut adalah $2x$.",
+                explanation: "Bagi pembilang dan penyebut dengan $x$. Pembilang menjadi $\\sqrt{16 + \\frac{5}{x}} \\to \\sqrt{16} = 4$. Penyebut menjadi $2 + \\frac{1}{x} \\to 2$. Nilai limit $= \\frac{4}{2} = 2$."
+            },
+            {
+                id: 12,
+                category: "Fungsi Rasional Kubik",
+                title: "Berapakah limit dari ekspansi suku kubik ini?",
+                math: "\\lim_{x \\to \\infty} \\frac{(x + 2)^3 - x^3}{x^2 + 1}",
+                options: [
+                    { label: "A. 6", correct: true },
+                    { label: "B. 2", correct: false },
+                    { label: "C. 8", correct: false },
+                    { label: "D. 0", correct: false }
+                ],
+                hint: "Jabarkan $(x+2)^3 = x^3 + 6x^2 + 12x + 8$. Kurangkan dengan $x^3$.",
+                explanation: "Pembilang menjadi $(x^3 + 6x^2 + 12x + 8) - x^3 = 6x^2 + 12x + 8$. Derajat pembilang dan penyebut sama-sama $x^2$. Hasil $= \\frac{6}{1} = 6$."
+            },
+            {
+                id: 13,
+                category: "Bentuk Irasional Suku Bebas",
+                title: "Tentukan hasil limit berikut:",
+                math: "\\lim_{x \\to \\infty} \\left( \\sqrt{x^2 + x + 1} - \\sqrt{x^2 + 1} \\right)",
+                options: [
+                    { label: "A. 0", correct: false },
+                    { label: "B. $\\frac{1}{2}$", correct: true },
+                    { label: "C. 1", correct: false },
+                    { label: "D. 2", correct: false }
+                ],
+                hint: "Nilai $a=1, b=1$ dan $p=1, q=0$. Gunakan rumus $(b-q)/(2\\sqrt{a})$.",
+                explanation: "$L = \\frac{1 - 0}{2\\sqrt{1}} = \\frac{1}{2} = 0.5$."
+            },
+            {
+                id: 14,
+                category: "Bentuk Irasional (a > p)",
+                title: "Berapakah nilai limit jika koefisien $a > p$?",
+                math: "\\lim_{x \\to \\infty} \\left( \\sqrt{16x^2 + 4x + 1} - \\sqrt{9x^2 + 2x} \\right)",
+                options: [
+                    { label: "A. $+\\infty$", correct: true },
+                    { label: "B. 0", correct: false },
+                    { label: "C. $-\\infty$", correct: false },
+                    { label: "D. $\\frac{7}{6}$", correct: false }
+                ],
+                hint: "Perhatikan koefisien $a=16$ dan $p=9$. Karena $a > p$, akar pertama tumbuh jauh lebih cepat.",
+                explanation: "Karena $a (16) > p (9)$, suku pertama tumbuh menuju tak hingga jauh lebih cepat daripada pengurangannya. Hasil limit $= +\\infty$."
+            },
+            {
+                id: 15,
+                category: "Aplikasi Kontekstual: Pertumbuhan Penduduk",
+                title: "Prediksi jumlah penduduk kota (dalam ribuan) setelah $t$ tahun dirumuskan $P(t) = \\frac{50t^2 + 100}{t^2 + 2}$. Berapa batas maksimum penduduk dalam jangka panjang ($t \\to \\infty$)?",
+                math: "\\lim_{t \\to \\infty} P(t) = \\lim_{t \\to \\infty} \\frac{50t^2 + 100}{t^2 + 2}",
+                options: [
+                    { label: "A. 50 Ribu Jiwa", correct: true },
+                    { label: "B. 100 Ribu Jiwa", correct: false },
+                    { label: "C. 25 Ribu Jiwa", correct: false },
+                    { label: "D. Tak Terhingga", correct: false }
+                ],
+                hint: "Bandingkan derajat tertinggi $t^2$ pada pembilang dan penyebut.",
+                explanation: "Karena derajat pembilang dan penyebut sama ($t^2$), limitnya adalah rasio koefisien $\\frac{50}{1} = 50$. Kapasitas maksimum kota adalah 50.000 jiwa."
+            },
+            {
+                id: 16,
+                category: "Aplikasi Kontekstual: Biaya Produksi",
+                title: "Biaya rata-rata produksi $x$ unit barang (dalam ribuan Rupiah) adalah $B(x) = \\frac{120x + 500}{x}$. Jika barang diproduksi secara massal ($x \\to \\infty$), biaya rata-rata mendekati...",
+                math: "\\lim_{x \\to \\infty} \\frac{120x + 500}{x}",
+                options: [
+                    { label: "A. Rp 500.000", correct: false },
+                    { label: "B. Rp 120.000", correct: true },
+                    { label: "C. Rp 0", correct: false },
+                    { label: "D. Rp 620.000", correct: false }
+                ],
+                hint: "Bagi setiap suku dengan $x$: $\\frac{120x}{x} + \\frac{500}{x} = 120 + \\frac{500}{x}$.",
+                explanation: "$\\lim_{x \\to \\infty} \\left(120 + \\frac{500}{x}\\right) = 120 + 0 = 120$ ribuan Rupiah = Rp 120.000 per unit."
+            },
+            {
+                id: 17,
+                category: "Fungsi Rasional Derajat 3",
+                title: "Berapakah hasil dari limit rasional berpangkat 3 ini?",
+                math: "\\lim_{x \\to \\infty} \\frac{(1 - 2x)^3}{(x - 1)(2x^2 + 1)}",
+                options: [
+                    { label: "A. -4", correct: true },
+                    { label: "B. -8", correct: false },
+                    { label: "C. 4", correct: false },
+                    { label: "D. -2", correct: false }
+                ],
+                hint: "Suku utama pembilang $(1-2x)^3 \\to -8x^3$. Suku utama penyebut $x \\cdot 2x^2 = 2x^3$.",
+                explanation: "Suku pangkat tertinggi pembilang adalah $(-2x)^3 = -8x^3$. Penyebut adalah $x \\times 2x^2 = 2x^3$. Hasil limit $= \\frac{-8}{2} = -4$."
+            },
+            {
+                id: 18,
+                category: "Bentuk Irasional Linier Depan",
+                title: "Hitunglah nilai limit bentuk berikut:",
+                math: "\\lim_{x \\to \\infty} \\left( 3x + 1 - \\sqrt{9x^2 - 6x + 2} \\right)",
+                options: [
+                    { label: "A. 1", correct: false },
+                    { label: "B. 2", correct: true },
+                    { label: "C. 3", correct: false },
+                    { label: "D. 0", correct: false }
+                ],
+                hint: "Ubah $(3x + 1)$ menjadi $\\sqrt{(3x+1)^2} = \\sqrt{9x^2 + 6x + 1}$.",
+                explanation: "Bentuknya menjadi $\\sqrt{9x^2 + 6x + 1} - \\sqrt{9x^2 - 6x + 2}$. Di sini $a=9, b=6, q=-6$. $L = \\frac{6 - (-6)}{2\\sqrt{9}} = \\frac{12}{6} = 2$."
+            },
+            {
+                id: 19,
+                category: "Konsep Dasar Limit",
+                title: "Berapakah nilai limit dari fungsi berikut?",
+                math: "\\lim_{x \\to \\infty} \\frac{10}{x^2 + 5}",
+                options: [
+                    { label: "A. 0", correct: true },
+                    { label: "B. 2", correct: false },
+                    { label: "C. 10", correct: false },
+                    { label: "D. $\\infty$", correct: false }
+                ],
+                hint: "Pembilang adalah konstanta $10$, penyebut tumbuh menuju $+\\infty$. Angka konstan dibagi tak hingga adalah...",
+                explanation: "Konstanta dibagi dengan bilangan yang sangat raksasa mendekati $0$. Maka $\\lim_{x \\to \\infty} \\frac{10}{x^2+5} = 0$."
+            },
+            {
+                id: 20,
+                category: "Bentuk Irasional Hasil Negatif",
+                title: "Tentukan hasil limit irasional dengan nilai pengurangan lebih besar:",
+                math: "\\lim_{x \\to \\infty} \\left( \\sqrt{4x^2 + 3x} - \\sqrt{4x^2 + 9x + 5} \\right)",
+                options: [
+                    { label: "A. -1.5", correct: true },
+                    { label: "B. -3", correct: false },
+                    { label: "C. 1.5", correct: false },
+                    { label: "D. 0", correct: false }
+                ],
+                hint: "Nilai $a=p=4, b=3, q=9$. Perhatikan $(b-q) = 3 - 9 = -6$.",
+                explanation: "$L = \\frac{b-q}{2\\sqrt{a}} = \\frac{3 - 9}{2\\sqrt{4}} = \\frac{-6}{4} = -1.5$ (atau $-\\frac{3}{2}$)."
+            }
+        ];
+
+        // Quiz State Management
+        let currentQuizIndex = 0;
+        let userAnswers = new Array(quizData.length).fill(null);
+        let userHintsUsed = new Array(quizData.length).fill(false);
+
+        // Initialize KaTeX and Dynamic Elements on Load
+        window.onload = function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+
+            // Populate Tab 1 Table
+            populateIntuisiTable();
+            // Calculate Tab 2 Rasional default
+            calculateRasional();
+            // Calculate Tab 3 Irasional default
+            calculateIrasional();
+            // Render first question of Quiz
+            renderQuizQuestion(0);
+        };
+
+        // Add XP Function with Visual Feedback
+        function addXP(amount) {
+            effortXP += amount;
+            const xpDisplay = document.getElementById('effort-points');
+            if (xpDisplay) {
+                xpDisplay.innerText = `${effortXP} XP`;
+                xpDisplay.classList.add('scale-125', 'text-amber-400');
+                setTimeout(() => {
+                    xpDisplay.classList.remove('scale-125', 'text-amber-400');
+                }, 300);
+            }
+        }
+
+        // TAB 5: Quiz Logic & Rendering Engine
+        function renderQuizQuestion(index) {
+            if (index < 0 || index >= quizData.length) return;
+
+            currentQuizIndex = index;
+            const q = quizData[index];
+
+            // Update Header & Progress Text
+            document.getElementById('quiz-q-num').innerText = q.id;
+            document.getElementById('quiz-q-category').innerText = `Kategori: ${q.category}`;
+            document.getElementById('quiz-q-title').innerText = q.title;
+            document.getElementById('quiz-q-math').innerHTML = `$$${q.math}$$`;
+            document.getElementById('quiz-progress-text').innerText = `Soal ${q.id} dari ${quizData.length}`;
+
+            // Update Progress Bar Percentage
+            const progressPercent = ((index + 1) / quizData.length) * 100;
+            document.getElementById('quiz-progress-bar').style.width = `${progressPercent}%`;
+
+            // Render Options
+            const optionsContainer = document.getElementById('quiz-options-container');
+            optionsContainer.innerHTML = '';
+
+            const answered = userAnswers[index];
+
+            q.options.forEach((opt, optIdx) => {
+                const btn = document.createElement('button');
+                btn.className = `opt-btn text-left p-3.5 border rounded-xl transition-all text-sm font-medium flex items-center justify-between ${
+                    answered !== null 
+                        ? (opt.correct 
+                            ? 'bg-emerald-50 border-emerald-400 text-emerald-900 font-bold' 
+                            : (answered === optIdx ? 'bg-red-50 border-red-400 text-red-900' : 'bg-white border-slate-200 opacity-60'))
+                        : 'bg-white border-slate-200 hover:border-brand-500 hover:bg-brand-50/50'
+                }`;
+
+                btn.disabled = answered !== null;
+                btn.onclick = () => selectQuizOption(index, optIdx);
+
+                btn.innerHTML = `
+                    <span>${opt.label}</span>
+                    ${answered !== null && opt.correct ? '<i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>' : ''}
+                    ${answered !== null && answered === optIdx && !opt.correct ? '<i class="fa-solid fa-circle-xmark text-red-500 text-base"></i>' : ''}
+                `;
+                optionsContainer.appendChild(btn);
+            });
+
+            // Render Hint Text
+            const hintBox = document.getElementById('quiz-active-hint');
+            hintBox.classList.add('hidden');
+            hintBox.innerHTML = `<strong>Petunjuk:</strong> ${q.hint}`;
+
+            // Render Feedback Box if Answered
+            const feedbackBox = document.getElementById('quiz-feedback-box');
+            if (answered !== null) {
+                const isCorrect = q.options[answered].correct;
+                feedbackBox.classList.remove('hidden', 'bg-emerald-50', 'border-emerald-300', 'text-emerald-900', 'bg-amber-50', 'border-amber-300', 'text-amber-900', 'bg-red-50', 'border-red-300', 'text-red-900');
+
+                if (isCorrect) {
+                    feedbackBox.classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
+                    feedbackBox.innerHTML = `
+                        <div class="flex items-center gap-2 font-bold text-emerald-800 border-b border-emerald-200 pb-1.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i> Jawaban Tepat! (+20 XP)
+                        </div>
+                        <p class="text-xs pt-1"><strong>Pembahasan Aljabar:</strong> ${q.explanation}</p>
+                    `;
+                } else {
+                    feedbackBox.classList.add('bg-amber-50', 'border-amber-300', 'text-amber-900');
+                    feedbackBox.innerHTML = `
+                        <div class="flex items-center gap-2 font-bold text-amber-800 border-b border-amber-200 pb-1.5">
+                            <i class="fa-solid fa-brain text-amber-600 text-lg"></i> Belum Tepat, Tapi Otakmu Sedang Belajar! (+5 XP Usaha)
+                        </div>
+                        <p class="text-xs pt-1"><strong>Jawaban Benar:</strong> ${q.options.find(o => o.correct).label}</p>
+                        <p class="text-xs"><strong>Pembahasan Aljabar:</strong> ${q.explanation}</p>
+                    `;
+                }
+            } else {
+                feedbackBox.classList.add('hidden');
+            }
+
+            // Update Navigation Buttons
+            document.getElementById('btn-prev-q').disabled = index === 0;
+            const nextBtn = document.getElementById('btn-next-q');
+            if (index === quizData.length - 1) {
+                nextBtn.innerHTML = 'Selesaikan & Lihat Nilai <i class="fa-solid fa-trophy"></i>';
+                nextBtn.className = 'px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-2';
+            } else {
+                nextBtn.innerHTML = 'Selanjutnya <i class="fa-solid fa-arrow-right"></i>';
+                nextBtn.className = 'px-5 py-2.5 bg-brand-600 text-white rounded-xl text-xs font-semibold hover:bg-brand-700 transition-all shadow-md shadow-brand-600/20 flex items-center gap-2';
+            }
+
+            // Calculate current live score
+            updateLiveScoreDisplay();
+
+            // Render Math inside question card
+            renderMathInElement(document.getElementById('quiz-active-container'), {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+        }
+
+        function selectQuizOption(qIndex, optIndex) {
+            if (userAnswers[qIndex] !== null) return;
+
+            userAnswers[qIndex] = optIndex;
+            const q = quizData[qIndex];
+            const isCorrect = q.options[optIndex].correct;
+
+            if (isCorrect) {
+                addXP(20);
+            } else {
+                addXP(5); // Effort XP for attempting
+            }
+
+            // Re-render question to display feedback
+            renderQuizQuestion(qIndex);
+        }
+
+        function toggleActiveHint() {
+            const hintBox = document.getElementById('quiz-active-hint');
+            if (hintBox) {
+                const wasHidden = hintBox.classList.contains('hidden');
+                hintBox.classList.toggle('hidden');
+                if (wasHidden && !userHintsUsed[currentQuizIndex]) {
+                    userHintsUsed[currentQuizIndex] = true;
+                    addXP(5); // Reward for using hint
+                }
+            }
+        }
+
+        function navigateQuiz(direction) {
+            const newIndex = currentQuizIndex + direction;
+            if (newIndex >= 0 && newIndex < quizData.length) {
+                renderQuizQuestion(newIndex);
+            } else if (newIndex >= quizData.length) {
+                finishQuizAndShowResults();
+            }
+        }
+
+        function updateLiveScoreDisplay() {
+            let correctCount = 0;
+            userAnswers.forEach((ans, idx) => {
+                if (ans !== null && quizData[idx].options[ans].correct) {
+                    correctCount++;
+                }
+            });
+
+            document.getElementById('quiz-score-val').innerText = `${correctCount} / ${quizData.length}`;
+        }
+
+        function finishQuizAndShowResults() {
+            document.getElementById('quiz-active-container').classList.add('hidden');
+            document.getElementById('quiz-summary-container').classList.remove('hidden');
+
+            let correctCount = 0;
+            userAnswers.forEach((ans, idx) => {
+                if (ans !== null && quizData[idx].options[ans].correct) {
+                    correctCount++;
+                }
+            });
+
+            const finalScore = Math.round((correctCount / quizData.length) * 100);
+            document.getElementById('summary-final-score').innerText = `${finalScore} / 100`;
+            document.getElementById('summary-correct-count').innerText = `${correctCount} / ${quizData.length}`;
+            document.getElementById('summary-xp-gained').innerText = `+${effortXP} XP`;
+
+            // Badge & Growth Mindset Message
+            const badgeEl = document.getElementById('summary-badge');
+            const mindsetMsg = document.getElementById('summary-mindset-msg');
+
+            if (finalScore >= 85) {
+                badgeEl.innerText = "Master Limit Tak Hingga 🌟";
+                badgeEl.className = "text-xs font-extrabold text-amber-300 block mt-1";
+                mindsetMsg.innerHTML = "<strong>Luar Biasa!</strong> Pemahaman konseptual dan analisis aljabar limitmu sangat tajam. Kamu telah berhasil menguasai seluruh variasi bentuk rasional, irasional, dan aplikasi nyata!";
+            } else if (finalScore >= 60) {
+                badgeEl.innerText = "Pemikir Kritis Bertumbuh 🚀";
+                badgeEl.className = "text-xs font-extrabold text-cyan-300 block mt-1";
+                mindsetMsg.innerHTML = "<strong>Kerja Bagus!</strong> Pemahamanmu sudah sangat berkembang pesat. Tinjau kembali beberapa pembahasan soal di bawah ini untuk makin memperkuat sinapsis otakmu!";
+            } else {
+                badgeEl.innerText = "Pejuang Sinapsis Otak 🧠";
+                badgeEl.className = "text-xs font-extrabold text-purple-300 block mt-1";
+                mindsetMsg.innerHTML = "<strong>Usaha yang Hebat!</strong> Ingat, kesalahan adalah bahan bakar utama pertumbuhan otak dalam matematika. Pelajari kunci pembahasan di bawah dan coba kembali tantangan ini!";
+            }
+
+            // Populate Full Review List of 20 Questions
+            const reviewList = document.getElementById('quiz-full-review-list');
+            reviewList.innerHTML = '';
+
+            quizData.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                const isCorrect = userAns !== null && q.options[userAns].correct;
+                const userAnsLabel = userAns !== null ? q.options[userAns].label : 'Tidak Dijawab';
+                const correctAnsLabel = q.options.find(o => o.correct).label;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'pt-4 space-y-2 text-xs sm:text-sm';
+                itemDiv.innerHTML = `
+                    <div class="flex items-start justify-between gap-2">
+                        <span class="font-bold text-slate-800">
+                            Soal ${q.id}. <span class="font-semibold text-slate-600">[${q.category}]</span> ${q.title}
+                        </span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-bold shrink-0 ${
+                            isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'
+                        }">
+                            ${isCorrect ? '<i class="fa-solid fa-check mr-1"></i> Benar' : '<i class="fa-solid fa-xmark mr-1"></i> Salah'}
+                        </span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl font-mono text-center font-bold text-brand-700 border border-slate-200">
+                        $$${q.math}$$
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div class="p-2.5 rounded-lg border ${isCorrect ? 'bg-emerald-50/60 border-emerald-200 text-emerald-900' : 'bg-red-50/60 border-red-200 text-red-900'}">
+                            <strong>Jawabanmu:</strong> ${userAnsLabel}
+                        </div>
+                        <div class="p-2.5 rounded-lg border bg-emerald-50/60 border-emerald-200 text-emerald-900">
+                            <strong>Jawaban Benar:</strong> ${correctAnsLabel}
+                        </div>
+                    </div>
+                    <div class="p-3 bg-slate-100/70 rounded-xl text-slate-700 text-xs border border-slate-200">
+                        <strong>Pembahasan:</strong> ${q.explanation}
+                    </div>
+                `;
+                reviewList.appendChild(itemDiv);
+            });
+
+            renderMathInElement(reviewList, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+        }
+
+        function resetQuiz() {
+            userAnswers = new Array(quizData.length).fill(null);
+            userHintsUsed = new Array(quizData.length).fill(false);
+            currentQuizIndex = 0;
+
+            document.getElementById('quiz-summary-container').classList.add('hidden');
+            document.getElementById('quiz-active-container').classList.remove('hidden');
+
+            renderQuizQuestion(0);
+        }
+
+        // TAB 1: Intuisi Logic
+        function populateIntuisiTable() {
+            const xValues = [10, 100, 1000, 10000, 1000000];
+            const tbody = document.getElementById('table-intuisi-body');
+            if (!tbody) return;
+
+            tbody.innerHTML = '';
+            xValues.forEach(x => {
+                const val = 1 / x;
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50 transition-colors';
+                row.innerHTML = `
+                    <td class="px-4 py-2.5 font-mono font-semibold text-slate-800">${x.toLocaleString('id-ID')}</td>
+                    <td class="px-4 py-2.5 font-mono text-brand-700">1 / ${x.toLocaleString('id-ID')}</td>
+                    <td class="px-4 py-2.5 font-mono text-slate-600">${val.toFixed(6)}</td>
+                    <td class="px-4 py-2.5 text-xs font-bold text-emerald-600">Mendekati 0</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function updateIntuisiSlider(pow) {
+            const x = Math.pow(10, pow);
+            const res = 1 / x;
+            document.getElementById('slider-x-val').innerText = `x = ${x.toLocaleString('id-ID')}`;
+            document.getElementById('slider-result').innerText = res.toFixed(pow + 1);
+        }
+
+        // TAB 2: Rasional Calculation Logic
+        function calculateRasional() {
+            const a = parseFloat(document.getElementById('rasional-a').value) || 0;
+            const m = parseInt(document.getElementById('rasional-m').value) || 1;
+            const b = parseFloat(document.getElementById('rasional-b').value) || 1;
+            const n = parseInt(document.getElementById('rasional-n').value) || 1;
+
+            const stepsContainer = document.getElementById('rasional-steps');
+            const statusBadge = document.getElementById('rasional-status-badge');
+            const resultDisplay = document.getElementById('rasional-final-result');
+
+            let stepsHTML = '';
+            let finalLimitText = '';
+
+            stepsHTML += `<p>1. Fungsi: $\\lim_{x \\to \\infty} \\frac{${a}x^{${m}}}{${b}x^{${n}}}$</p>`;
+            stepsHTML += `<p>2. Bagi pembilang dan penyebut dengan pangkatan tertinggi $x^{\\max(${m},${n})}$:</p>`;
+
+            if (m === n) {
+                statusBadge.innerText = `Derajat Sama (m = n = ${m})`;
+                statusBadge.className = 'text-xs bg-blue-900/60 px-2.5 py-1 rounded text-blue-300';
+                stepsHTML += `<p>$\\lim_{x \\to \\infty} \\frac{\\frac{${a}x^{${m}}}{x^{${m}}}}{\\frac{${b}x^{${n}}}{x^{${n}}}} = \\lim_{x \\to \\infty} \\frac{${a}}{${b}}$</p>`;
+                const ans = (a / b).toFixed(2);
+                finalLimitText = `Limit = ${a}/${b} ${a % b !== 0 ? `≈ ${ans}` : ''}`;
+                stepsHTML += `<p class="text-emerald-400 font-bold">3. Hasil Limit: $\\frac{${a}}{${b}}$</p>`;
+            } else if (m < n) {
+                statusBadge.innerText = `Derajat Penyebut Lebih Besar (m=${m} < n=${n})`;
+                statusBadge.className = 'text-xs bg-emerald-900/60 px-2.5 py-1 rounded text-emerald-300';
+                stepsHTML += `<p>$\\lim_{x \\to \\infty} \\frac{\\frac{${a}x^{${m}}}{x^{${n}}}}{\\frac{${b}x^{${n}}}{x^{${n}}}} = \\frac{0}{${b}} = 0$</p>`;
+                finalLimitText = `Limit = 0`;
+                stepsHTML += `<p class="text-emerald-400 font-bold">3. Hasil Limit: $0$</p>`;
+            } else {
+                statusBadge.innerText = `Derajat Pembilang Lebih Besar (m=${m} > n=${n})`;
+                statusBadge.className = 'text-xs bg-purple-900/60 px-2.5 py-1 rounded text-purple-300';
+                stepsHTML += `<p>$\\lim_{x \\to \\infty} \\frac{\\frac{${a}x^{${m}}}{x^{${m}}}}{\\frac{${b}x^{${n}}}{x^{${m}}}} = \\frac{${a}}{0} = \\infty$</p>`;
+                finalLimitText = `Limit = ∞`;
+                stepsHTML += `<p class="text-amber-400 font-bold">3. Hasil Limit: $\\infty$ (Tak Hingga)</p>`;
+            }
+
+            stepsContainer.innerHTML = stepsHTML;
+            resultDisplay.innerText = finalLimitText;
+
+            renderMathInElement(stepsContainer, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+        }
+
+        // TAB 3: Irasional Calculation Logic
+        function calculateIrasional() {
+            const a = parseFloat(document.getElementById('ir-a').value) || 0;
+            const b = parseFloat(document.getElementById('ir-b').value) || 0;
+            const c = parseFloat(document.getElementById('ir-c').value) || 0;
+
+            const p = parseFloat(document.getElementById('ir-p').value) || 0;
+            const q = parseFloat(document.getElementById('ir-q').value) || 0;
+            const r = parseFloat(document.getElementById('ir-r').value) || 0;
+
+            const stepsContainer = document.getElementById('ir-steps');
+            const badge = document.getElementById('ir-badge');
+            const formulaDisp = document.getElementById('ir-formula-display');
+
+            let stepsHTML = '';
+
+            stepsHTML += `<p><strong>Bentuk Fungsi:</strong> $\\lim_{x \\to \\infty} \\left( \\sqrt{${a}x^2 + ${b}x + ${c}} - \\sqrt{${p}x^2 + ${q}x + ${r}} \\right)$</p>`;
+
+            if (a === p && a > 0) {
+                badge.innerText = 'Kondisi a = p';
+                badge.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800';
+
+                const numerator = b - q;
+                const denominator = 2 * Math.sqrt(a);
+                const res = (numerator / denominator).toFixed(2);
+
+                stepsHTML += `<p>1. Kalikan dengan bentuk sekawan (rasionalisasi):</p>`;
+                stepsHTML += `<p class="text-xs bg-slate-50 p-2 rounded border">$\\frac{(${a}x^2 + ${b}x + ${c}) - (${p}x^2 + ${q}x + ${r})}{\\sqrt{${a}x^2 + ${b}x + ${c}} + \\sqrt{${p}x^2 + ${q}x + ${r}}}$</p>`;
+                stepsHTML += `<p>2. Sederhanakan pembilang: $(${b} - (${q}))x + (${c} - ${r}) = ${numerator}x + ${c - r}$</p>`;
+                stepsHTML += `<p>3. Bagi dengan $x$ dan dapatkan rumus praktis: $L = \\frac{b - q}{2\\sqrt{a}}$</p>`;
+                stepsHTML += `<p class="font-bold text-purple-700">4. Subtitusi: $L = \\frac{${b} - (${q})}{2\\sqrt{${a}}} = \\frac{${numerator}}{${2 * Math.sqrt(a)}} = ${res}$</p>`;
+
+                formulaDisp.innerText = `L = (${b} - ${q}) / (2√${a}) = ${res}`;
+            } else if (a > p) {
+                badge.innerText = 'Kondisi a > p';
+                badge.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800';
+                stepsHTML += `<p>Karena koefisien $a (${a}) > p (${p})$, nilai suku pertama tumbuh jauh lebih cepat daripada suku kedua.</p>`;
+                stepsHTML += `<p class="font-bold text-amber-600">Hasil Limit: $+\\infty$</p>`;
+                formulaDisp.innerText = `L = +∞`;
+            } else {
+                badge.innerText = 'Kondisi a < p';
+                badge.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800';
+                stepsHTML += `<p>Karena koefisien $a (${a}) < p (${p})$, suku pengurangan tumbuh jauh lebih cepat.</p>`;
+                stepsHTML += `<p class="font-bold text-red-600">Hasil Limit: $-\\infty$</p>`;
+                formulaDisp.innerText = `L = -∞`;
+            }
+
+            stepsContainer.innerHTML = stepsHTML;
+
+            renderMathInElement(stepsContainer, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+        }
+
+        // TAB 4: Application Solutions Toggle
+        function toggleAppSolution(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.toggle('hidden');
+                addXP(10);
+            }
+        }
+
+        // TAB 5: Quiz System Logic
+        function toggleHint(hintId) {
+            const hint = document.getElementById(hintId);
+            if (hint) {
+                hint.classList.toggle('hidden');
+                addXP(5); // Reward for seeking hint (Growth Mindset approach)
+            }
+        }
+
+        function checkQuizAnswer(qNum, option, isCorrect, feedbackMessage) {
+            const feedbackBox = document.getElementById('quiz-feedback');
+            feedbackBox.classList.remove('hidden', 'bg-emerald-50', 'border-emerald-300', 'text-emerald-900', 'bg-amber-50', 'border-amber-300', 'text-amber-900');
+
+            if (isCorrect) {
+                feedbackBox.classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
+                feedbackBox.innerHTML = `
+                    <div class="flex items-center gap-2 font-bold mb-1 text-emerald-700">
+                        <i class="fa-solid fa-circle-check text-lg"></i> Jawaban Tepat! (+20 XP)
+                    </div>
+                    <p class="text-xs">${feedbackMessage}</p>
+                `;
+                addXP(20);
+
+                // Auto advance question after delay if available
+                setTimeout(() => {
+                    if (qNum < totalQuizCount) {
+                        document.getElementById(`quiz-q${qNum}`).classList.add('hidden');
+                        document.getElementById(`quiz-q${qNum + 1}`).classList.remove('hidden');
+                        document.getElementById('quiz-progress').innerText = `${qNum + 1} / ${totalQuizCount}`;
+                        feedbackBox.classList.add('hidden');
+                    }
+                }, 2500);
+
+            } else {
+                feedbackBox.classList.add('bg-amber-50', 'border-amber-300', 'text-amber-900');
+                feedbackBox.innerHTML = `
+                    <div class="flex items-center gap-2 font-bold mb-1 text-amber-800">
+                        <i class="fa-solid fa-brain text-lg"></i> Belum Tepat, Tapi Otakmu Sedang Belajar! (+5 XP)
+                    </div>
+                    <p class="text-xs">${feedbackMessage}</p>
+                `;
+                addXP(5); // Effort reward for trying
+            }
+
+            renderMathInElement(feedbackBox, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+        }
+
+        // TAB 6: Reflection Save Logic
+        function saveReflection() {
+            const q1 = document.getElementById('ref-q1').value;
+            const q2 = document.getElementById('ref-q2').value;
+
+            if (q1.trim() === '' || q2.trim() === '') {
+                document.getElementById('ref-saved-status').innerText = 'Silakan isi kedua pertanyaan refleksi terlebih dahulu.';
+                document.getElementById('ref-saved-status').className = 'text-xs text-red-500 font-semibold';
+                return;
+            }
+
+            addXP(50);
+            document.getElementById('ref-saved-status').innerText = 'Refleksi berhasil disimpan! Kamu telah menunjukkan komitmen pola pikir bertumbuh (+50 XP).';
+            document.getElementById('ref-saved-status').className = 'text-xs text-emerald-600 font-semibold';
+        }
+    </script>
+</body>
+</html>
